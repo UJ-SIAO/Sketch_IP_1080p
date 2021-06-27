@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-`define headerSize 1080
+`define headerSize 1162
 `define imageSize 1920*1080		//					need to change if resolution is changed
 
 module tb(
@@ -56,9 +56,9 @@ module tb(
     #100;
     reset = 1;
     #100;
-    file  = $fopen("D:/GitCode/Sketch_IP_1080p/A.bmp","rb");
-    file1 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketch_A.bmp","wb");
-    file2 = $fopen("D:/GitCode/Sketch_IP_1080p/A.h","w");
+    file  = $fopen("D:/GitCode/Sketch_IP_1080p/GrayScale_Material/U.bmp","rb");
+    file1 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/Sketch_U.bmp","wb");
+    file2 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/U.h","w");
     for(i=0;i<`headerSize;i=i+1)
     begin
         $fscanf(file,"%c",imgData);
