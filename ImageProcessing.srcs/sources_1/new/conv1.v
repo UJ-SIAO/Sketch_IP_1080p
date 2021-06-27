@@ -91,7 +91,7 @@ always @(posedge i_clk)
 begin
 	for(i=0;i<9;i=i+1)
 	begin
-		stage1_data[i]  <= ((i_pixel_data[i*8+:8] << 4)/10);
+		stage1_data[i]  <= ((i_pixel_data[i*8+:8] * 15)/10);
 	end
 	stage1_Vaild    <= i_pixel_data_valid;
 end
@@ -109,7 +109,7 @@ always @(posedge i_clk)
 begin
 	for(i=0;i<9;i=i+1)
 	begin
-		i_pixel_data_light_s1_threshold[i] <= i_pixel_data_light_s1[i]-40;
+		i_pixel_data_light_s1_threshold[i] <= i_pixel_data_light_s1[i]-20;
 		i_pixel_data_light_s2[i] <= i_pixel_data_light_s1[i];
 		//for test
 		//sumDataInt2[i] = multData2[i];
@@ -121,7 +121,7 @@ always @(posedge i_clk)
 begin	
 	for(i=0;i<9;i=i+1)
 	begin
-		curved_data[i]  <= (i_pixel_data_light_s1_threshold[i] * 46 ) / 43;
+		curved_data[i]  <= (i_pixel_data_light_s1_threshold[i] * 51 ) / 47;
 		i_pixel_data_light_s3[i] <= i_pixel_data_light_s2[i];
 	end
 	curved_Vaild    <= threshold_vaild;		
@@ -132,7 +132,7 @@ begin
 	for(i=0;i<9;i=i+1)
 	begin
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'b0  : ((i_pixel_data_light[i] - 40) * 42 ) / 43;	//(40,0)->(255,210)
-		multData2[i] <= (i_pixel_data_light_s3[i] > 40) ?  curved_data[i]  : 8'b0;		//(40,0)->(255,230)
+		multData2[i] <= (i_pixel_data_light_s3[i] >= 20) ?  curved_data[i]  : 8'b0;		//(40,0)->(255,230)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'd40 : ((i_pixel_data_light[i] - 40) * 34 ) / 43;	//(40,40)->(255,210)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'b0  : ((i_pixel_data_light[i] - 40) * 51 ) / 43;	//(40,0)->(255,255)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'd40 : ((i_pixel_data_light[i] - 40) * 51 ) / 43;	//(40,40)->(255,255)
