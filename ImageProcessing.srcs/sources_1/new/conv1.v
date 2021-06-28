@@ -27,7 +27,7 @@ input        i_pixel_data_valid,
 output reg [7:0] o_convolved_data,
 output reg   o_convolved_data_valid
     );
-    
+
 integer i; 
 
 reg [7:0] kernel1 [8:0];
@@ -121,7 +121,7 @@ always @(posedge i_clk)
 begin	
 	for(i=0;i<9;i=i+1)
 	begin
-		curved_data[i]  <= (i_pixel_data_light_s1_threshold[i] * 51 ) / 47;
+		curved_data[i]  <= (i_pixel_data_light_s1_threshold[i] * 48 ) / 47;  //(40,0)->(255,240)
 		i_pixel_data_light_s3[i] <= i_pixel_data_light_s2[i];
 	end
 	curved_Vaild    <= threshold_vaild;		
@@ -132,16 +132,16 @@ begin
 	for(i=0;i<9;i=i+1)
 	begin
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'b0  : ((i_pixel_data_light[i] - 40) * 42 ) / 43;	//(40,0)->(255,210)
-		multData2[i] <= (i_pixel_data_light_s3[i] >= 20) ?  curved_data[i]  : 8'b0;		//(40,0)->(255,230)
+		multData2[i] <= (i_pixel_data_light_s3[i] > 20) ?  curved_data[i]  : 8'b0;		//(40,0)->(255,230)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'd40 : ((i_pixel_data_light[i] - 40) * 34 ) / 43;	//(40,40)->(255,210)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'b0  : ((i_pixel_data_light[i] - 40) * 51 ) / 43;	//(40,0)->(255,255)
 		//multData2[i] <= (i_pixel_data_light[i] < 40) ?  8'd40 : ((i_pixel_data_light[i] - 40) * 51 ) / 43;	//(40,40)->(255,255)
 		//multData2[i] <= (i_pixel_data_light[i] < 70) ?  8'd0 : ((i_pixel_data_light[i] - 70) * 42 ) / 37;		//(70,0)->(255,210)
 		//multData2[i] <= (i_pixel_data_light[i] < 70) ?  8'd0 : ((i_pixel_data_light[i] - 70) * 46 ) / 37;		//(70,0)->(255,230)
-		
+
 		//for test
 		//multData2[i] <= i_pixel_data_light[i];
-		
+
 	end
 	multDataValid <= curved_Vaild;
 end
@@ -259,7 +259,7 @@ begin
 	dodge_data_s1	 <= (compared_data[8] << 8);
 	inverse_multData1_s6 <= 255 - multData1_s5;
 	multData1_s6 <= multData1_s5;
-	
+
 	dodged_data_valid_s1 <= compared_data_valid_s2;
 end
 
@@ -269,7 +269,7 @@ always @(posedge i_clk)
 begin
 	dodge_data_s2 <= dodge_data_s1 / inverse_multData1_s6;
 	multData1_s7  <= multData1_s6;
-	
+
 	dodged_data_valid_s2 <= dodged_data_valid_s1;
 end
 
@@ -281,7 +281,7 @@ begin
 						(255 < ((compared_data[8] * 255) / (255 - multData1_s5))) ?  8'd255 : ((compared_data[8] * 255) / (255 - multData1_s5));*/
 	o_convolved_data <= (multData1_s7 == 255 ) ? 8'd255 : 
 							(15'd255 > dodge_data_s2) ? dodge_data_s2 : 8'd255;
-							
+
 	/*if(multData1_s7 == 8'd255)
 	begin
 		o_convolved_data <= 8'd255;
@@ -297,5 +297,5 @@ begin
 	//o_convolved_data<=compared_data[8];
 	o_convolved_data_valid <= dodged_data_valid_s2;
 end
-    
+
 endmodule
