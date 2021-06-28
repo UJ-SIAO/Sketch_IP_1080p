@@ -56,9 +56,9 @@ module tb(
     #100;
     reset = 1;
     #100;
-    file  = $fopen("D:/GitCode/Sketch_IP_1080p/GrayScale_Material/U.bmp","rb");
-    file1 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/Sketch_U.bmp","wb");
-    file2 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/U.h","w");
+    file  = $fopen("D:/GitCode/Sketch_IP_1080p/GrayScale_Material/R.bmp","rb");
+    file1 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/Sketch_R.bmp","wb");
+    file2 = $fopen("D:/GitCode/Sketch_IP_1080p/Sketched_BMP/R.h","w");
     for(i=0;i<`headerSize;i=i+1)
     begin
         $fscanf(file,"%c",imgData);
