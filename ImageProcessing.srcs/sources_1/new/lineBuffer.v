@@ -29,9 +29,9 @@ output [23:0] o_data,
 input i_rd_data
 );
 
-reg [7:0] line [1919:0]; //line buffer	need to change if resolution is changed
-reg [10:0] wrPntr;		//2^11=2048		need to change if resolution is changed
-reg [10:0] rdPntr;		//2^11=2048		need to change if resolution is changed
+reg [7:0] line [1919:0];		//line buffer	need to change if resolution is changed
+(* EQUIVALENT_REGISTER_REMOVAL="NO" *) reg [10:0] wrPntr;		 	//2^11=2048		need to change if resolution is changed
+ (* EQUIVALENT_REGISTER_REMOVAL="NO" *)reg [10:0] rdPntr;			//2^11=2048		need to change if resolution is changed
 
 always @(posedge i_clk)
 begin

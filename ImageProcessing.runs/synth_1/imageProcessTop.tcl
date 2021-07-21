@@ -44,6 +44,9 @@ read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outp
 set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xdc]
 set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer_ooc.xdc]
 
+read_ip -quiet d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -52,6 +55,9 @@ set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc
+set_property used_in_implementation false [get_files D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 
