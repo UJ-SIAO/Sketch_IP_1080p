@@ -80,7 +80,7 @@ set rc [catch {
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.runs/synth_1/imageProcessTop.dcp
   read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xci
-  read_ip -quiet d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+  read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
   read_xdc D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc
   link_design -top imageProcessTop -part xc7z020clg484-1
   close_msg_db -file init_design.pb

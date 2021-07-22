@@ -44,7 +44,7 @@ read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outp
 set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xdc]
 set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer_ooc.xdc]
 
-read_ip -quiet d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
 set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
