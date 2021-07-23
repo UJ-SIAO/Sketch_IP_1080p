@@ -1,0 +1,30 @@
+# Simultaneously Switching Noise (SSN) Report
+# Version: 1.0
+# Created on: Fri Jul 23 20:01:36 2021
+# Result Name: ssn_1
+# Project Name: ImageProcessing
+# Project Family: Zynq-7000
+# Part: xc7z020clg484
+# Temperature Grade: commercial
+# SSN Data Version: Production
+# Package Version: FINAL 2012-06-26
+# Package Pin Delay Version: VERS. 2.0 2012-06-26
+
+IO Bank,VCCO,Signal Name,Pin Number,IO Standard,Drive (mA),Slew Rate,OFFCHIP_TERM,Remaining Margin (%),Result, Notes
+13,1.8,o_data[0],T6,LVCMOS18,12,SLOW,FP_VTT_50,84.2,PASS,
+13,1.8,o_data[1],R6,LVCMOS18,12,SLOW,FP_VTT_50,69.4,PASS,
+13,1.8,o_data[2],AA4,LVCMOS18,12,SLOW,FP_VTT_50,31.4,PASS,
+13,1.8,o_data[3],Y4,LVCMOS18,12,SLOW,FP_VTT_50,17.5,PASS,
+13,1.8,o_data[4],AB6,LVCMOS18,12,SLOW,FP_VTT_50,12.1,PASS,
+13,1.8,o_data[5],AB7,LVCMOS18,12,SLOW,FP_VTT_50,-6.8,FAIL,
+13,1.8,o_data[6],AB4,LVCMOS18,12,SLOW,FP_VTT_50,-10.0,FAIL,
+13,1.8,o_data[7],AB5,LVCMOS18,12,SLOW,FP_VTT_50,-2.7,FAIL,
+13,1.8,o_data_ready,AB1,LVCMOS18,12,SLOW,FP_VTT_50,-10.0,FAIL,
+13,1.8,o_data_valid,AB2,LVCMOS18,12,SLOW,FP_VTT_50,8.3,PASS,
+13,1.8,o_intr,AA6,LVCMOS18,12,SLOW,FP_VTT_50,13.7,PASS,
+
+
+# Reference Links
+# Safe to Ignore SSN Failure on MIG Designs - http://www.xilinx.com/support/answers/36141.htm
+# SSN Mitigation Strategy - http://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf#search=%22Mitigate%22
+# Off-chip Terminations - http://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf#search=%22terminated%22

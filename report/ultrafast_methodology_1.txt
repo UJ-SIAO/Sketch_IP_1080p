@@ -1,0 +1,163 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Fri Jul 23 19:59:12 2021
+| Host         : DESKTOP-RE08DTS running 64-bit major release  (build 9200)
+| Command      : report_methodology -name ultrafast_methodology_2 -file D:/GitCode/Sketch_IP_1080p/report/ultrafast_methodology_1.txt -rpx D:/GitCode/Sketch_IP_1080p/report/ultrafast_methodology_1.rpx -checks {SYNTH-22 SYNTH-21 PDRC-204 PDRC-190 TIMING-40 TIMING-39 TIMING-38 TIMING-37 TIMING-36 TIMING-35 TIMING-34 TIMING-33 TIMING-32 TIMING-31 TIMING-30 TIMING-29 TIMING-28 TIMING-27 TIMING-26 TIMING-25 TIMING-24 TIMING-23 TIMING-22 TIMING-21 TIMING-20 TIMING-19 TIMING-18 TIMING-17 TIMING-16 TIMING-15 TIMING-14 TIMING-13 TIMING-12 TIMING-11 TIMING-10 TIMING-9 TIMING-8 TIMING-7 TIMING-6 TIMING-5 TIMING-4 TIMING-3 TIMING-2 TIMING-1 XDCV-2 XDCV-1 XDCH-2 XDCH-1 XDCC-8 XDCC-7 XDCC-6 XDCC-5 XDCC-4 XDCC-3 XDCC-2 XDCC-1 XDCB-5 XDCB-4 XDCB-3 XDCB-2 XDCB-1 CLKC-53 CLKC-9 CLKC-5 CLKC-38 CLKC-37 CLKC-36 CLKC-35 CLKC-4 CLKC-18 CLKC-3 CLKC-2 CLKC-1 REQP-1959 HPDR-1 NTCN-1 CKLD-2 CKLD-1 DPIR-1 CKBF-1 SYNTH-14 SYNTH-13 SYNTH-12 SYNTH-11 SYNTH-10 SYNTH-9 SYNTH-16 SYNTH-15 SYNTH-6 SYNTH-5 SYNTH-4}
+| Design       : imageProcessTop
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: impl_1
+      Design limits: <entire design considered>
+
+            Checks: CKBF-1 CKLD-1 CKLD-2 CLKC-1 CLKC-2 CLKC-3 CLKC-4 CLKC-5 
+CLKC-9 CLKC-18 CLKC-35 CLKC-36 CLKC-37 CLKC-38 CLKC-53 DPIR-1 HPDR-1 NTCN-1 
+PDRC-190 PDRC-204 REQP-1959 SYNTH-4 SYNTH-5 SYNTH-6 SYNTH-9 SYNTH-10 SYNTH-11 
+SYNTH-12 SYNTH-13 SYNTH-14 SYNTH-15 SYNTH-16 SYNTH-21 SYNTH-22 TIMING-1 TIMING-2
+TIMING-3 TIMING-4 TIMING-5 TIMING-6 TIMING-7 TIMING-8 TIMING-9 TIMING-10 
+TIMING-11 TIMING-12 TIMING-13 TIMING-14 TIMING-15 TIMING-16 TIMING-17 TIMING-18 
+TIMING-19 TIMING-20 TIMING-21 TIMING-22 TIMING-23 TIMING-24 TIMING-25 TIMING-26 
+TIMING-27 TIMING-28 TIMING-29 TIMING-30 TIMING-31 TIMING-32 TIMING-33 TIMING-34 
+TIMING-35 TIMING-36 TIMING-37 TIMING-38 TIMING-39 TIMING-40 XDCB-1 XDCB-2 XDCB-3
+XDCB-4 XDCB-5 XDCC-1 XDCC-2 XDCC-3 XDCC-4 XDCC-5 XDCC-6 XDCC-7 XDCC-8 XDCH-1 
+XDCH-2 XDCV-1 XDCV-2
+             Max violations: <unlimited>
+             Violations found: 23
++-----------+----------+-------------------------------------------------+------------+
+| Rule      | Severity | Description                                     | Violations |
++-----------+----------+-------------------------------------------------+------------+
+| PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                   | 22         |
++-----------+----------+-------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell OB/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X3Y1 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell OB/U0/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on axi_reset_n relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on i_data[0] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on i_data[1] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on i_data[2] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on i_data[3] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on i_data[4] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on i_data[5] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on i_data[6] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on i_data[7] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on i_data_ready relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on i_data_valid relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on o_data[0] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on o_data[1] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on o_data[2] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on o_data[3] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on o_data[4] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on o_data[5] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on o_data[6] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on o_data[7] relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on o_data_ready relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on o_data_valid relative to clock(s) axi_clk
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on o_intr relative to clock(s) axi_clk
+Related violations: <none>
+
+
