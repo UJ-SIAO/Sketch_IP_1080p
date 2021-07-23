@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Thu Jul 22 20:11:40 2021
+| Date             : Fri Jul 23 22:02:50 2021
 | Host             : DESKTOP-RE08DTS running 64-bit major release  (build 9200)
 | Command          : report_power -file imageProcessTop_power_routed.rpt -pb imageProcessTop_power_summary_routed.pb -rpx imageProcessTop_power_routed.rpx
 | Design           : imageProcessTop
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.206        |
+| Total On-Chip Power (W)  | 0.227        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.100        |
+| Dynamic (W)              | 0.121        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.6         |
-| Junction Temperature (C) | 27.4         |
+| Max Ambient (C)          | 82.4         |
+| Junction Temperature (C) | 27.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        3 |       --- |             --- |
-| Slice Logic              |     0.021 |     8959 |       --- |             --- |
-|   LUT as Logic           |     0.012 |     2429 |     53200 |            4.57 |
+| Clocks                   |     0.024 |        3 |       --- |             --- |
+| Slice Logic              |     0.022 |    14792 |       --- |             --- |
+|   LUT as Logic           |     0.011 |     2435 |     53200 |            4.58 |
 |   LUT as Distributed RAM |     0.007 |     4320 |     17400 |           24.83 |
-|   Register               |     0.001 |     1358 |    106400 |            1.28 |
+|   Register               |     0.003 |     7187 |    106400 |            6.75 |
 |   CARRY4                 |    <0.001 |       88 |     13300 |            0.66 |
 |   LUT as Shift Register  |    <0.001 |       10 |     17400 |            0.06 |
 |   F7/F8 Muxes            |    <0.001 |      260 |     53200 |            0.49 |
 |   Others                 |     0.000 |      198 |       --- |             --- |
-| Signals                  |     0.063 |     6087 |       --- |             --- |
+| Signals                  |     0.072 |    12019 |       --- |             --- |
 | Block RAM                |     0.001 |      0.5 |       140 |            0.36 |
 | I/O                      |     0.001 |       23 |       200 |           11.50 |
 | Static Power             |     0.106 |          |           |                 |
-| Total                    |     0.206 |          |           |                 |
+| Total                    |     0.227 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,8 +75,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.106 |       0.098 |      0.008 |
-| Vccaux    |       1.800 |     0.011 |       0.000 |      0.010 |
+| Vccint    |       1.000 |     0.127 |       0.119 |      0.008 |
+| Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |
@@ -151,9 +151,9 @@ Table of Contents
 +----------------------------------------------------------------------------+-----------+
 | Name                                                                       | Power (W) |
 +----------------------------------------------------------------------------+-----------+
-| imageProcessTop                                                            |     0.100 |
-|   IC                                                                       |     0.078 |
-|     lB0                                                                    |     0.020 |
+| imageProcessTop                                                            |     0.121 |
+|   IC                                                                       |     0.099 |
+|     lB0                                                                    |     0.025 |
 |       line_reg_r1_0_63_0_2                                                 |    <0.001 |
 |       line_reg_r1_0_63_3_5                                                 |    <0.001 |
 |       line_reg_r1_0_63_6_6                                                 |    <0.001 |
@@ -514,7 +514,7 @@ Table of Contents
 |       line_reg_r3_960_1023_3_5                                             |    <0.001 |
 |       line_reg_r3_960_1023_6_6                                             |    <0.001 |
 |       line_reg_r3_960_1023_7_7                                             |    <0.001 |
-|     lB1                                                                    |     0.019 |
+|     lB1                                                                    |     0.024 |
 |       line_reg_r1_0_63_0_2                                                 |    <0.001 |
 |       line_reg_r1_0_63_3_5                                                 |    <0.001 |
 |       line_reg_r1_0_63_6_6                                                 |    <0.001 |
@@ -875,7 +875,7 @@ Table of Contents
 |       line_reg_r3_960_1023_3_5                                             |    <0.001 |
 |       line_reg_r3_960_1023_6_6                                             |    <0.001 |
 |       line_reg_r3_960_1023_7_7                                             |    <0.001 |
-|     lB2                                                                    |     0.018 |
+|     lB2                                                                    |     0.025 |
 |       line_reg_r1_0_63_0_2                                                 |    <0.001 |
 |       line_reg_r1_0_63_3_5                                                 |    <0.001 |
 |       line_reg_r1_0_63_6_6                                                 |    <0.001 |
@@ -1236,7 +1236,7 @@ Table of Contents
 |       line_reg_r3_960_1023_3_5                                             |    <0.001 |
 |       line_reg_r3_960_1023_6_6                                             |    <0.001 |
 |       line_reg_r3_960_1023_7_7                                             |    <0.001 |
-|     lB3                                                                    |     0.019 |
+|     lB3                                                                    |     0.025 |
 |       line_reg_r1_0_63_0_2                                                 |    <0.001 |
 |       line_reg_r1_0_63_3_5                                                 |    <0.001 |
 |       line_reg_r1_0_63_6_6                                                 |    <0.001 |

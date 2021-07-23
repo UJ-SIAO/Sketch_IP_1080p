@@ -29,32 +29,48 @@ output [23:0] o_data,
 input i_rd_data
 );
 
-reg [7:0] line [1919:0];		//line buffer	need to change if resolution is changed
-(* EQUIVALENT_REGISTER_REMOVAL="NO" *) reg [10:0] wrPntr;		 	//2^11=2048		need to change if resolution is changed
- (* EQUIVALENT_REGISTER_REMOVAL="NO" *)reg [10:0] rdPntr;			//2^11=2048		need to change if resolution is changed
+ reg [7:0] line [1919:0];		//line buffer	need to change if resolution is changed
+(* max_fanout = "3" *) reg [10:0] wrPntr;		 	//2^11=2048		need to change if resolution is changed
+(* max_fanout = "3" *) reg [10:0] wrPntr2;		 	//2^11=2048		need to change if resolution is changed
+(* max_fanout = "3" *) reg [10:0] rdPntr;			//2^11=2048		need to change if resolution is changed
+(* max_fanout = "3" *) reg [10:0] rdPntr2;			//2^11=2048		need to change if resolution is changed
+(* max_fanout = "3" *) reg [10:0] rdPntr3;			//2^11=2048		need to change if resolution is changed
 
 always @(posedge i_clk)
 begin
     if(i_data_valid)
-        line[wrPntr] <= i_data;
+        line[wrPntr2] <= i_data;
 end
 
 always @(posedge i_clk)
 begin
-    if(i_rst || wrPntr == 1919)
-        wrPntr <= 'd0;
+	if(i_rst || wrPntr == 1919)
+	begin
+		wrPntr   <= 'd0;
+		wrPntr2  <= 'd0;
+	end
     else if(i_data_valid)
-        wrPntr <= wrPntr + 'd1;
+	begin
+		wrPntr <= wrPntr + 'd1;
+		wrPntr2<= wrPntr + 'd1;
+	end
 end
 
-assign o_data = {line[rdPntr],line[rdPntr+1],line[rdPntr+2]};
+assign o_data = {line[rdPntr],line[rdPntr2+1],line[rdPntr3+2]};
 
 always @(posedge i_clk)
 begin
     if(i_rst || rdPntr == 1919)
+	begin
         rdPntr <= 'd0;
-    else if(i_rd_data )
-        rdPntr <= rdPntr + 'd1;
+        rdPntr2 <= 'd0;
+        rdPntr3 <= 'd0;
+	end
+    else if(i_rd_data )begin
+        rdPntr  <= rdPntr + 'd1;
+        rdPntr2 <= rdPntr + 'd1;
+        rdPntr3 <= rdPntr + 'd1;
+	end
 end
 
 endmodule
