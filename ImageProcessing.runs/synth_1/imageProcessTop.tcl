@@ -22,30 +22,30 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/GitCode/Sketch_IP_1080p/ImageProcessing.cache/wt [current_project]
-set_property parent.project_path D:/GitCode/Sketch_IP_1080p/ImageProcessing.xpr [current_project]
+set_property webtalk.parent_dir D:/Project/Sketch_IP_1080p/ImageProcessing.cache/wt [current_project]
+set_property parent.project_path D:/Project/Sketch_IP_1080p/ImageProcessing.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
 set_property ip_repo_paths {
-  d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs
+  d:/Project/Sketch_IP_1080p/ImageProcessing.srcs
   d:/gitcode/imageprocessingofsketch
 } [current_project]
-set_property ip_output_repo d:/GitCode/Sketch_IP_1080p/ImageProcessing.cache/ip [current_project]
+set_property ip_output_repo d:/Project/Sketch_IP_1080p/ImageProcessing.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/conv1.v
-  D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/imageControl.v
-  D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/lineBuffer.v
-  D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/imageProcessTop.v
+  D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/conv1.v
+  D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/imageControl.v
+  D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/lineBuffer.v
+  D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/new/imageProcessTop.v
 }
-read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xci
-set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xdc]
-set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer_ooc.xdc]
+read_ip -quiet D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xci
+set_property used_in_implementation false [get_files -all d:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer.xdc]
+set_property used_in_implementation false [get_files -all d:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/outputBuffer/outputBuffer_ooc.xdc]
 
-read_ip -quiet D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
-set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc]
+read_ip -quiet D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+set_property used_in_implementation false [get_files -all d:/Project/Sketch_IP_1080p/ImageProcessing.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -55,8 +55,8 @@ set_property used_in_implementation false [get_files -all d:/GitCode/Sketch_IP_1
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc
-set_property used_in_implementation false [get_files D:/GitCode/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc]
+read_xdc D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc
+set_property used_in_implementation false [get_files D:/Project/Sketch_IP_1080p/ImageProcessing.srcs/constrs_1/new/sketchConstraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
